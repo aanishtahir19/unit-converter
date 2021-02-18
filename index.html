@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converter</title>
+    <!-- Linking Css -->
+    <link rel="stylesheet" href="./resourses/styles/styles.min.css">
+</head>
+
+<body>
+    <main>
+        <h1 class="main-heading">Unit Converter</h1>
+        <!-- Length Conversion -->
+        <div id="length">
+            <h2 class="section-heading">Length</h2>
+            <div class="conv">
+                <div class="conv-elem">
+                    <label for="meter">Meter</label>
+                    <input type="number" id="meter" name="meter">
+                </div>
+                <div class="conv-elem">
+                    <label for="feet">Foot</label>
+                    <input type="number" id="foot" name="foot"><br><br>
+                </div>
+                <div class="conv-elem">
+                    <label for="inch">Inches</label>
+                    <input type="number" id="inch" name="inch"><br><br>
+                </div>
+                
+
+
+            </div>
+        </div>
+        <!-- Currency Conversion -->
+        <div id="currency">
+            <h2 class="section-heading">Currency Conversion</h2>
+            <div class="curr-conv">
+                <div class="curr_select">
+                    <span>
+                        <input type="number" name="fromcurrency" id="fromcurrency">
+                        <select id="fromcurrencysymbol">
+                            <option value="0">Select currency:</option>
+                            <option value="PKR">PKR</option>
+                            <option value="USD" selected="selected">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="GBP">GBP</option>
+    
+                        </select>
+                    </span>
+                    
+                </div>
+                <div class="curr-select">
+                    <input type="number" name="tocurrency" id="tocurrency">
+                    <select id="tocurrencysymbol">
+                        <option value="0">Select currency:</option>
+                        <option value="PKR" selected="selected">PKR</option>
+                        <option value="USD">USD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="GBP">GBP</option>
+
+                    </select>
+
+                </div>
+                <button id="convertcurrencybtn">Convert</button>
+
+            </div>
+        </div>
+        <!-- Energy Conversion -->
+        <div id="energy">
+            <h2 class="section-heading">Energy</h2>
+            <div class="conv">
+                <label for="joule">Joule:</label>
+                <input type="number" id="joule" name="joule">
+                <label for="btu">BTU:</label>
+                <input type="number" id="btu" name="btu"><br><br>
+                <label for="cal">cal:</label>
+                <input type="number" id="cal" name="cal"><br><br>
+                <label for="kWh">kWh:</label>
+                <input type="number" id="kWh" name="kWh"><br><br>
+
+            </div>
+        </div>
+
+
+
+    </main>
+    <!-- Adding Scripts -->
+    <script src="./resourses/javascript/function.js"></script>
+</body>
+
+</html>

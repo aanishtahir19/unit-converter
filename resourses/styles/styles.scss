@@ -14,17 +14,20 @@ body {
 
 body {
     background-color: #03254E;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
     font-family: Montserrat, sans-serif;
+    
+    
 
-    main {
+    #unit-converter {
         width: 60%;
-        height: 600px;
+        // height: 600px;
         background-color: white;
         border-radius: 20px;
         padding: 10px 20px;
+        margin: 50px auto 0 auto;
 
         overflow: hidden;
         .main-heading {
@@ -66,5 +69,16 @@ body {
             }
         }
         
+    }
+    #shape-converter{
+        width: 60%;
+        // height: 600px;
+        background-color: white;
+        border-radius: 20px;
+        padding: 10px 20px;
+        margin: 50px auto 0 auto;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
     }
 }

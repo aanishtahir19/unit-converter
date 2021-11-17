@@ -1,9 +1,50 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap");
 
+// Colors //
+// ------ //
 $primary-color:#03254E;
+$secondary-color:#c3e8f7;
+
+//  Mixins //
+// ------ //
+// Select Element Mixin
+@mixin selecterStyle {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+    font-weight: 600;
+    padding: 5px 10px;
+    background-color: $secondary-color;
+
+    &:focus {
+        border: 2px solid $primary-color;
+    }
+
+}
+
+// Calculate Buttons
+@mixin calculateBtn {
+    padding: 5px 10px;
+    border: 2px solid $primary-color;
+    background-color: $secondary-color;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+
+    &:hover {
+        background-color: $primary-color;
+        color: white;
+    }
+
+}
+
+// General Styles //
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+img {
+    width: 100%;
 }
 
 html,
@@ -18,8 +59,8 @@ body {
     // align-items: center;
     // justify-content: center;
     font-family: Montserrat, sans-serif;
-    
-    
+
+
 
     #unit-converter {
         width: 60%;
@@ -27,9 +68,13 @@ body {
         background-color: white;
         border-radius: 20px;
         padding: 10px 20px;
-        margin: 50px auto 0 auto;
-
+        margin: 0 auto;
         overflow: hidden;
+        @media only screen and (max-width: 600px){
+            width: 100%;
+            margin-top: 2rem;
+            border-radius: 0;
+        }
         .main-heading {
             text-align: center;
             text-transform: uppercase;
@@ -40,45 +85,136 @@ body {
             padding: 10px 0;
             display: flex;
             flex-wrap: wrap;
-            
             label {
                 display: block;
                 padding: 5px 10px;
-                
+
             }
-            .conv-elem{
+
+            .conv-elem {
                 // padding-bottom: 10px;
                 margin: 0 10px;
-                input{
+                @media only screen and (max-width: 600px){
+                    width: 100%;
+                }
+
+                input {
                     padding: 10px;
-                    background-color:#c3e8f7;
+                    background-color: #c3e8f7;
                     border-radius: 20px;
                     border: 2px solid $primary-color;
+                    
+                    @media only screen and (max-width: 600px){
+                        width: 15rem;
+                    }
+                }
+
+                input:focus {
+                    outline-width: 0;
 
                 }
-                input:focus{
-                    outline-width:0;
-                    
-                }
             }
-            
+
         }
-        .curr-conv{
-            .curr-select{
+
+        .curr-conv {
+            .curr-select {
                 margin-top: 10px;
             }
         }
-        
+
     }
-    #shape-converter{
+
+    // Area & Moment of inertia calcuaton Styles
+    #shape-converter {
         width: 60%;
-        // height: 600px;
         background-color: white;
         border-radius: 20px;
-        padding: 10px 20px;
+        padding: 30px 40px;
         margin: 50px auto 0 auto;
         overflow: hidden;
-        display: flex;
-        flex-direction: row;
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        #shape-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+
+            #shape-input {
+                width: 30%;
+
+                #shape-selecter {
+                    @include selecterStyle;
+                }
+
+                img {
+                    margin-top: 20px;
+                    width: 200px;
+                }
+
+                #shape-input-fields {
+                    input {
+                        margin: 5px 0;
+
+                    }
+                    
+                }
+
+                #shapeCalculate {
+                    @include calculateBtn;
+                    margin-top: 20px;
+                    width: 120px;
+                }
+
+                #unit-selecter {
+                    @include selecterStyle;
+                }
+            }
+
+            #shape-output {
+                width: 40%;
+
+                #shape-output-table {
+                    width: 100%;
+
+                    th {
+                        text-align: left;
+                        padding-bottom: 10px;
+                    }
+
+                    td {
+                        text-align: left;
+                    }
+                }
+            }
+        }
+
+    }
+
+    @media only screen and (max-width: 600px) {
+        #shape-converter {
+            width: 80%;
+            padding: 30px 20px;
+
+            #shape-container {
+
+                flex-direction: column;
+
+                #shape-input {
+                    width: 100%;
+                }
+
+                #shape-output {
+                    width: 100%;
+                    margin-top: 30px;
+
+                    #shape-output-table {}
+                }
+            }
+
+        }
     }
 }

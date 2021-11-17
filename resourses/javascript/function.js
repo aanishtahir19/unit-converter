@@ -107,6 +107,7 @@ let inputfields = document.querySelector("#shape-input-fields");
 let shapeCalculate = document.querySelector("#shapeCalculate");
 let shapeUnit = document.querySelector("#unit-selecter");
 let currShape = shapeSelecter.value;
+
 // console.log(currShape);
 function shapeInput(val){
     currShape = val;
@@ -143,6 +144,20 @@ function shapeInput(val){
         <input type="number" id="r2" name="r2"><br>
         <label for="r1">r1: </label>
         <input type="number" id="r1" name="r1"><br>`;
+
+    }
+    else if (currShape == "ibeam"){
+        shapeImage.src ="./resourses/images/I_Beam.jpg"
+        inputfields.innerHTML=`
+        <label for="H">H: </label>
+        <input type="number" id="H" name="H"><br>
+        <label for="B">B: </label>
+        <input type="number" id="B" name="B"><br>
+        <label for="h">h: </label>
+        <input type="number" id="h" name="h"><br>
+        <label for="b">b: </label>
+        <input type="number" id="b" name="b"><br>
+        `;
 
     }
 }
@@ -202,6 +217,18 @@ shapeCalculate.addEventListener('click', function(){
         let I_x = Math.PI*((r2**4)-(r1**4))/4;
         let I_y = Math.PI*((r2**4)-(r1**4))/4;;
         let J = I_x+I_y;
+        displayShapeOutput(Area, I_x, I_y, J);
+    }
+    else if (currShape == "ibeam"){
+        let H = parseFloat(document.getElementById("H").value);
+        let B = parseFloat(document.getElementById("B").value);
+        let h = parseFloat(document.getElementById("h").value);
+        let b = parseFloat(document.getElementById("b").value);
+        console.clear();
+        let Area = 2*B*h + H *B;
+        let I_x = (H**3)*b/12 + 2*(((h**3)*B/12)+h*B*((H+h)**2)/4);
+        let I_y = (b**3)*H/12 + 2*((B**3)*h)/12;
+        let J = I_x + I_y;
         displayShapeOutput(Area, I_x, I_y, J);
     }
 })

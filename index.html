@@ -83,58 +83,64 @@
             </div>
         </div>
     </main>
-
+    
+    <!-- Calculate Area, Moment of Inertia -->
     <main id="shape-converter">
-        <div id="shape-input">
-            <select id="shape-selecter" style="display: block;" onchange="shapeInput(this.value)">
-                <option value="rectangle" selected="selected">Rectangle</option>
-                <option value="hollowRectangle">Hollow Rectangle</option>
-                <option value="circle">Circle</option>
-                <option value="hollowCircle">Hollow Circle</option>
-            </select>
-            <img src="./resourses/images/Rectangular.png" alt="" srcset="">
-            <div id="shape-input-fields">
-                <label for="b">b: </label>
-                <input type="number" id="b" name="b"><br>
-                <label for="h">h: </label>
-                <input type="number" id="h" name="h"><br>
-
+        <h2>Calculate Area, Moment of Inertia</h2>
+        <div id="shape-container">
+            <div id="shape-input">
+                <select id="shape-selecter" style="display: block;" onchange="shapeInput(this.value)">
+                    <option value="rectangle" selected="selected">Rectangle</option>
+                    <option value="hollowRectangle">Hollow Rectangle</option>
+                    <option value="circle">Circle</option>
+                    <option value="hollowCircle">Hollow Circle</option>
+                    <option value="ibeam">I Beam</option>
+                </select>
+                <img src="./resourses/images/Rectangular.png" alt="" srcset="">
+                <div id="shape-input-fields">
+                    <label for="b">b: </label>
+                    <input type="number" id="b" name="b"><br>
+                    <label for="h">h: </label>
+                    <input type="number" id="h" name="h"><br>
+    
+                </div>
+                <button id="shapeCalculate">Calculate</button>
+                <select id="unit-selecter"  >
+                    <option value="meter" selected="selected">m</option>
+                    <option value="milimeter">mm</option>
+                </select>
             </div>
-            <button id="shapeCalculate">Calculate</button>
-            <select id="unit-selecter"  >
-                <option value="meter" selected="selected">m</option>
-                <option value="milimeter">mm</option>
-            </select>
+            <div id="shape-output">
+                <table id="shape-output-table">
+                    <tr>
+                        <th>Notation</th>
+                        <th>Value</th>
+                        <th>Unit</th>
+                    </tr>
+                    <tr>
+                        <td>Area</td>
+                        <td id = "areaValue">-</td>
+                        <td id="areaUnit">-</td>
+                    </tr>
+                    <tr>
+                        <td>Ix</td>
+                        <td id="IxValue">-</td>
+                        <td id="IxUnit">-</td>
+                    </tr>
+                    <tr>
+                        <td>Iy</td>
+                        <td id="IyValue">-</td>
+                        <td id="IyUnit">-</td>
+                    </tr>
+                    <tr>
+                        <td>J</td>
+                        <td id="JValue">-</td>
+                        <td id="JUnit">-</td>
+                    </tr>
+                </table>
+            </div> 
         </div>
-        <div id="shape-output">
-            <table id="shape-output-table">
-                <tr>
-                    <th>Notation</th>
-                    <th>Value</th>
-                    <th>Unit</th>
-                </tr>
-                <tr>
-                    <td>Area</td>
-                    <td id = "areaValue">-</td>
-                    <td id="areaUnit">-</td>
-                </tr>
-                <tr>
-                    <td>Ix</td>
-                    <td id="IxValue">-</td>
-                    <td id="IxUnit">-</td>
-                </tr>
-                <tr>
-                    <td>Iy</td>
-                    <td id="IyValue">-</td>
-                    <td id="IyUnit">-</td>
-                </tr>
-                <tr>
-                    <td>J</td>
-                    <td id="JValue">-</td>
-                    <td id="JUnit">-</td>
-                </tr>
-            </table>
-        </div> 
+        
 
 
     </main>
